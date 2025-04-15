@@ -58,4 +58,9 @@ git pull
 - Include a brief write-up of your implemented features and any challenges faced.
 
 ---
-Happy coding, and good luck with Lunch Lotto! 🍀
+Happy coding, and good luck with Lunch Lotto! 
+
+## Important notes from developer
+For setup:
+1. Copy `config.example.js` to `config.js`
+2. Replace `"YOUR_API_KEY_HERE"` with your actual Google Maps API key
