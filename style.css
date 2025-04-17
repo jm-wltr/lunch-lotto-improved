@@ -175,3 +175,39 @@ background-color:rgb(61, 69, 119);
 .swal-title {
   font-size: 18px !important; /* Customize the title text size */
 }
+
+
+/* HISTORY FEATURE */
+
+/* small icon buttons */
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+/* history list styling */
+.history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.history-list li {
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+.history-list a {
+  text-decoration: none;
+  color: #007BFF;
+}
+.history-list time {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+}
