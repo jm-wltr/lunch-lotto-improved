@@ -8,79 +8,14 @@ This assignment involves enhancing a Chrome extension developed by one of the To
 ## Project Description
 Lunch Lotto is a Chrome extension that helps users decide where to eat by randomly selecting nearby restaurants. Your task is to enhance this extension by implementing new features.
 
-## Enhancement Options
-Choose one of the following enhancements to implement:
+## Enhancements I made
 
-1. **History Feature**: Maintain a log of all restaurants chosen by the user.
-2. **Alternative API Integration**: Replace Google Maps API with another restaurant data provider.
-3. **Progress Indicator**: Add a progress bar to indicate the status of API calls.
-4. **Custom Feature**: Propose a unique feature (requires instructor/TA approval).
+# History
 
-## Getting Started
+I added a button on the top left corner with an image icon that represents the history. It uses `chrome.storage.local` to store all previous resturants fetched with their Google Maps link and the time of the fetch, and displays it in an organized manner inside the popup window. There is also an option to clear your history.
 
-### Step 1: Team Organization
-- Assign a team member as the **Product Manager (PM)** for Lunch Lotto.
-- Ensure this PM is different from the one assigned to the Nara project.
-
-### Step 2: Repository Setup
-The PM should fork the repository:
-1. Navigate to the `lunch-lotto-starter` repository on GitHub.
-2. Click the **Fork** button to create a copy under their account.
-
-### Step 3: Cloning the Repository
-Once the PM has forked the repository, team members should clone it locally:
-```sh
-git clone https://github.com/<PM-username>/lunch-lotto-starter.git
-```
-
-### Step 4: Development Workflow
-1. Open the project in a text editor (e.g., **Visual Studio Code** recommended).
-2. Make changes to the codebase.
-3. Use the following commands to commit and push your changes:
-
-```sh
-git add .
-git commit -m "feat: [feature name] added"
-git push
-```
-
-4. As team members contribute, collaborate using **Pull Requests (PRs)** on GitHub.
-5. Regularly sync your local repository with the latest changes:
-
-```sh
-git pull
-```
-
-6. Resolve merge conflicts as needed and ensure smooth integration.
-
-## Submission
-- Submit the final version of your project as per website guidelines.
-- Include a brief write-up of your implemented features and any challenges faced.
-
-## Setup Google Maps API Key
-
-### Replace the Google Maps API Key:
-
-1. Open the popup.js file in a code editor (e.g., VS Code).
-2. Find the line containing:
-   ```js
-   const apiKey = "YOUR_API_KEY";
-   ```
-3. Replace "YOUR_API_KEY" with your own Google Maps API Key.
-   Example:
-   ```js
-   const apiKey = "AIzaSy12345EXAMPLE";
-   ```
-
-### If you don't have a Google Maps API Key yet:
-
-1. Go to the Google Cloud Console.
-2. Create or select a project.
-3. Navigate to APIs & Services > Credentials and click Create Credentials.
-4. Select API Key, copy the generated key, and replace the placeholder in popup.js.
-
----
-Happy coding, and good luck with Lunch Lotto! 
+# Loading bar
+I added a progress bar to visually indicate the loading process when fetching nearby restaurants. The bar appears below the loading GIF and gradually fills as the data is retrieved, simulating progress using timed intervals. Key checkpoints update the bar to reflect different stages of the fetch and processing pipeline, culminating at 100% when the restaurant options are ready and the wheel is displayed. This provides users with a clearer sense of activity and loading status during the fetch operation.
 
 ## Important notes from developer
 For setup:
