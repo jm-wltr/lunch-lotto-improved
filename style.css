@@ -246,17 +246,37 @@ background-color:rgb(61, 69, 119);
   background-color: #a71d2a;
 }
 
-#history-view {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* push content to top */
-  align-items: center;
-  min-height: 350px; /* enough to prevent collapse when list is empty */
-  padding: 10px 20px;
+
+/* progress bar container sits at bottom */
+#progress-container {
+  position: absolute;
+  bottom: 40px;      /* 20px up from bottom of canvas */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;        /* bar spans 80% of wheel width */
+  height: 16px;
+  background: #eee;
+  border-radius: 8px;
+  overflow: visible;
+  z-index: 9;
+  display: none;     /* toggled in JS */
 }
 
+/* the blue fill */
+#progress-bar {
+  width: 0%;
+  height: 100%;
+  background: #007BFF;
+  transition: width 0.2s ease;
+}
 
-#history-view h3 {
-  margin: 60px 0 10px 20px; /* top | right | bottom | left */
-  text-align: left;
+/* optional text above the bar */
+#progress-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: -1.4em;       /* place the text just above the bar */
+  font-size: 0.8rem;
+  color: #333;
+  pointer-events: none;
 }
