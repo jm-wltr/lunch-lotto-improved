@@ -166,6 +166,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   });  
 
+  document.getElementById("clear-history").addEventListener("click", async () => {
+    await chrome.storage.local.set({ history: [] });
+    document.getElementById("history-list").innerHTML = ""; // Clear visible list
+    swal("History cleared!", { icon: "success" });
+  });
+  
+
   document.getElementById("history-btn").addEventListener("click", async () => {
     // hide wheel, show history
     document.getElementById("main-view").style.display = "none";
