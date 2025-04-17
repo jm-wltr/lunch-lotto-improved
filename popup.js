@@ -1,4 +1,4 @@
-const apiKey = "YOUR_API_KEY";
+const apiKey = config.apiKey;
 const defaultSettings = {
   distance: 0.5,       // Default search radius in miles
   price: "2,3",        // Google Places API uses 1-4 ($ - $$$$)
@@ -165,4 +165,38 @@ document.addEventListener("DOMContentLoaded", async () => {
       await fetchRestaurants(); // Fetch restaurants with the new settings
     });
   });  
+
+  document.getElementById("clear-history").addEventListener("click", async () => {
+    await chrome.storage.local.set({ history: [] });
+    document.getElementById("history-list").innerHTML = ""; // Clear visible list
+    swal("History cleared!", { icon: "success" });
+  });
+  
+
+  document.getElementById("history-btn").addEventListener("click", async () => {
+    // hide wheel, show history
+    document.getElementById("main-view").style.display = "none";
+    document.getElementById("history-view").style.display = "block";
+  
+    const listEl = document.getElementById("history-list");
+    listEl.innerHTML = "";          // clear old
+  
+    const history = await loadHistory();
+    history.forEach(item => {
+      const li = document.createElement("li");
+      const date = new Date(item.timestamp).toLocaleString();
+      li.innerHTML = `
+        <strong>${item.name}</strong>
+        <span>— ${date}</span>
+        <a href="${item.link}" target="_blank">Map</a>
+      `;
+      listEl.appendChild(li);
+    });
+  });
+  
+  document.getElementById("close-history").addEventListener("click", () => {
+    // back to wheel
+    document.getElementById("history-view").style.display = "none";
+    document.getElementById("main-view").style.display = "block";
+  });
 });

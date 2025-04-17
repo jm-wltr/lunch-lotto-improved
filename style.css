@@ -107,26 +107,6 @@ html, body {
   color: #555;
 }
 
-/* Button Styling */
-#settings-view button {
-  width: 45%; /* Make buttons slightly larger */
-  padding: 12px;
-  margin: 10px 2.5%; /* Space buttons evenly */
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: #007BFF;
-  
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#settings-view button:hover {
-  background-color: #0056b3;
-}
-
 /* Align inputs and buttons */
 #settings-view .form-group {
   margin-bottom: 10px;
@@ -174,4 +154,109 @@ background-color:rgb(61, 69, 119);
 
 .swal-title {
   font-size: 18px !important; /* Customize the title text size */
+}
+
+
+/* HISTORY FEATURE */
+
+.view button {
+  width: 45%;
+  padding: 12px;
+  margin: 10px auto;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view button:hover {
+  background-color: #0056b3;
+}
+
+
+#history-btn {
+  background: none;
+  border: none;
+  margin: 10px;
+  padding: 0;
+  position: absolute;
+  top: 00px;
+  left: 00px;
+  cursor: pointer;
+  width: 30px;
+}
+
+#history-btn img {
+  width: 45px;  /* match settings button */
+  height: 45px;
+  transition: transform 0.2s ease;
+}
+
+#history-btn img:hover {
+  transform: scale(1.1);
+}
+
+/* hide any view with class="view" by default */
+.view {
+  display: none;
+}
+
+/* style the history list */
+#history-list {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin: 0 20px 20px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+#history-list li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+#history-list li a {
+  margin-left: 8px;
+  font-size: 0.8rem;
+  color: #007BFF;
+  text-decoration: none;
+}
+#history-list li a:hover {
+  text-decoration: underline;
+}
+
+#clear-history {
+  display: block;
+  width: 40%;
+  margin: 5px auto 15px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #dc3545; /* Bootstrap red */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#clear-history:hover {
+  background-color: #a71d2a;
+}
+
+#history-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* push content to top */
+  align-items: center;
+  min-height: 350px; /* enough to prevent collapse when list is empty */
+  padding: 10px 20px;
+}
+
+
+#history-view h3 {
+  margin: 60px 0 10px 20px; /* top | right | bottom | left */
+  text-align: left;
 }

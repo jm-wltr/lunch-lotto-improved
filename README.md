@@ -80,4 +80,9 @@ git pull
 4. Select API Key, copy the generated key, and replace the placeholder in popup.js.
 
 ---
-Happy coding, and good luck with Lunch Lotto! 🍀
+Happy coding, and good luck with Lunch Lotto! 
+
+## Important notes from developer
+For setup:
+1. Copy `config.example.js` to `config.js`
+2. Replace `"YOUR_API_KEY_HERE"` with your actual Google Maps API key

@@ -16,6 +16,7 @@
   </div>
   
   <div id="popup-container">
+
     <!-- 🎡 Main View -->
     <div id="main-view">
       <div id="wheel-container">
@@ -31,6 +32,11 @@
       <!-- <button id="open-settings">Settings</button> -->
       <button id="open-settings">
         <img src="assets/filter.jpg" alt="Settings">
+      </button>
+
+      <!-- History -->
+      <button id="history-btn">
+        <img src="assets/history.jpg" alt="History">
       </button>
     </div>
 
@@ -51,9 +57,19 @@
       <button id="save-settings">Save</button>
       <button id="close-settings">Back</button>
     </div>
+
+    <!-- History View -->
+    <div id="history-view" lass="view" style="display:none; padding:10px;">
+      <button id="close-history">Back</button>
+      <button id="clear-history">Clear History</button>
+      <h3>Recent Picks</h3>
+      <ul id="history-list" class="history-list"></ul>
+    </div>
+    
   </div>
 
   <script src="libs/sweetalert.min.js"></script>
+  <script src="config.js"></script>
   <script src="wheel.js"></script>
   <script src="popup.js"></script>
 

@@ -11,6 +11,19 @@ let spinAngleStart = 0;
 let spinTime = 0;
 let spinTimeTotal = 0;
 
+// save one entry to chrome.storage.local
+async function saveHistory(entry) {
+  const { history = [] } = await chrome.storage.local.get("history");
+  history.unshift(entry);          // newest first
+  await chrome.storage.local.set({ history });
+}
+
+// load all entries (most‑recent first)
+async function loadHistory() {
+  const { history = [] } = await chrome.storage.local.get("history");
+  return history;
+}
+
 function scaleCanvas(canvas, ctx) {
     const pixelRatio = window.devicePixelRatio || 1;
   
@@ -173,6 +186,13 @@ function truncateOption(option) {
   
       // Select a random motivational message
       const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+
+      // record it in history
+      saveHistory({
+        name: selectedOption.name,
+        link: selectedOption.googleMapsLink,
+        timestamp: new Date().toISOString()
+      });
   
       // Show result + motivational message
       swal({
